@@ -1,4 +1,6 @@
 """Exercice 3: Journal de bord d’un robot avec des tuples"""
+
+
 releve1 = ("laser_avant", 2.35, "m")
 releve2 = ("laser_arriere", 1.10, "m")
 releve3 = ("gyroscope", 87.5, "deg")
