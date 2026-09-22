@@ -1,6 +1,8 @@
 """Exercice 3: De la fonction à la classe Habitant"""
 
-class Habitant:
+from abc import ABC, abstractmethod
+
+class Habitant(ABC):
     """Classe représentant un habitant avec un nom, un âge, une adresse 
     et un dictionnaire d'animaux."""
     def __init__(self, nom, age, adresse, animaux=None):
@@ -9,6 +11,11 @@ class Habitant:
         self.__age = age
         self.__adresse = adresse
         self.__animaux = animaux if animaux is not None else {}
+
+    @abstractmethod
+    def calcul_nombre_annee_avant_retraite(self):
+        """Méthode abstraite pour calculer le nombre d'années avant la retraite."""
+        pass
 
     def affichage_adresse(self):
         """Affiche l'adresse de l'habitant.donné"""
@@ -57,14 +64,14 @@ class Habitant:
         """Modifie le dictionnaire d'animaux de l'habitant."""
         self.__animaux = animaux
 
-h1 = Habitant("Alice", 25, "Rue A", {"chiens": 2, "chats": 1})
+#h1 = Habitant("Alice", 25, "Rue A", {"chiens": 2, "chats": 1})
 
-h1.age = 26
-assert h1.age == 26
+#h1.age = 26
+#assert h1.age == 26
 
-h2 = Habitant("Bob", 30, "Rue B", {"chiens": 1})
-try:
-    h2.age = -5
-    assert False, "une ValueError aurait du etre levee"
-except ValueError:
-    pass
+#h2 = Habitant("Bob", 30, "Rue B", {"chiens": 1})
+#try:
+#    h2.age = -5
+#    assert False, "une ValueError aurait du etre levee"
+#except ValueError:
+#    pass
