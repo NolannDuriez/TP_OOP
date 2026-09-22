@@ -18,7 +18,6 @@ class Habitant:
         """Compte le nombre d'animeaux de l'espèce renseignée de l'habitant donné"""
         return self.__animaux.get(animal, 0)
 
-    
 
     def get_nom(self):
         """Retourne le nom de l'habitant."""
@@ -58,13 +57,14 @@ class Habitant:
         """Modifie le dictionnaire d'animaux de l'habitant."""
         self.__animaux = animaux
 
-h1 = Habitant
+h1 = Habitant("Alice", 25, "Rue A", {"chiens": 2, "chats": 1})
 
 h1.age = 26
 assert h1.age == 26
 
+h2 = Habitant("Bob", 30, "Rue B", {"chiens": 1})
 try:
-    h1.age = -5
+    h2.age = -5
     assert False, "une ValueError aurait du etre levee"
 except ValueError:
     pass
