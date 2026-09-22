@@ -12,6 +12,10 @@ class Habitant(ABC):
         self.__adresse = adresse
         self.__animaux = animaux if animaux is not None else {}
 
+    def __str__(self):
+        """Retourne une représentation en chaîne de caractères de l'habitant."""
+        return f"{self.__prenom} {self.__nom}, {self.__age} ans, habite a {self.__adresse}"
+
     @abstractmethod
     def calcul_nombre_annee_avant_retraite(self):
         """Méthode abstraite pour calculer le nombre d'années avant la retraite."""
