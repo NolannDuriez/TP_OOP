@@ -46,3 +46,7 @@ autre_village.ajouter_habitant_agregation(elise) # meme habitant dans 2 villages
 
 assert len(pytown.get_habitants()) == 2
 assert elise in autre_village.get_habitants()
+
+
+# ajouter-habitant-composition crée elle-même l'habitant qui ne peut pas être réutilisé par la suite 
+# alors que ajouter-habitant-agregation prend un habitant déjà existant et peut le réutiliser dans un autre village.
