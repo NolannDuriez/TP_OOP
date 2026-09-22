@@ -1,14 +1,6 @@
 """Exercice 5: Composition et agrégation : la classe Village"""
 
-class Habitant:
-    """Classe représentant un habitant avec un nom, un âge, une adresse 
-    et un dictionnaire d'animaux."""
-    def __init__(self, nom, age, adresse, animaux=None):
-        """Initialise un nouvel habitant avec les informations fournies."""
-        self.nom = nom
-        self.age = age
-        self.adresse = adresse
-        self.animaux = animaux if animaux is not None else {}
+from habitant import Habitant
 
 class Village:
     """Classe représentant un village avec un nom et une liste d'habitants."""
@@ -32,7 +24,7 @@ class Village:
 
     def afficher_habitants(self):
         for habitant in self.habitants:
-            print(f"{habitant.nom} ")
+            print(f"{habitant.get_nom()} ")
 
 
 pytown = Village("PyTown")
@@ -48,5 +40,5 @@ assert len(pytown.get_habitants()) == 2
 assert elise in autre_village.get_habitants()
 
 
-# ajouter-habitant-composition crée elle-même l'habitant qui ne peut pas être réutilisé par la suite 
+# ajouter-habitant-composition crée elle-même l'habitant qui ne peut pas être réutilisé par la suite
 # alors que ajouter-habitant-agregation prend un habitant déjà existant et peut le réutiliser dans un autre village.
